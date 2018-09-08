@@ -51,4 +51,9 @@ def initialize(options={})
     sql = "SELECT * FROM #{self.table_name} WHERE name = '#{name}'"
     DB[:conn].execute(sql)
   end
+  
+    def self.find_by(x)
+    sql = "SELECT * FROM #{self.table_name} WHERE name = 'x'"
+    DB[:conn].execute(sql)
+  end
 end
