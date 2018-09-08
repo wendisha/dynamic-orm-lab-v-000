@@ -52,8 +52,8 @@ def initialize(options={})
     DB[:conn].execute(sql)
   end
   
-    def self.find_by(x)
-    sql = "SELECT * FROM #{self.table_name} WHERE name = 'x'"
+  def self.find_by(column_name)
+    sql = "SELECT * FROM #{self.table_name} ORDER BY '#{column_name}' LIMIT 1"
     DB[:conn].execute(sql)
   end
   
